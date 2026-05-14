@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="refresh" content="6;url=https://esse-portfolio.vercel.app" />
+  <title>ESSE Henry-Joël</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: #f7f9ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      color: #0d1b4b;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    /* Photo */
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #1a56db;
+      /* Remplace le src par l'URL de ta vraie photo */
+      background: #dce6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: #1a56db;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Nom */
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.9rem;
+      letter-spacing: -.02em;
+      color: #0d1b4b;
+      line-height: 1.1;
+    }
+
+    /* Titre */
+    .title {
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #1a56db;
+    }
+
+    /* Divider */
+    .line {
+      width: 36px;
+      height: 2px;
+      background: #1a56db;
+      border-radius: 2px;
+      opacity: .4;
+    }
+
+    /* Lien */
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 500;
+      color: #0d1b4b;
+      border: 1.5px solid #dce6ff;
+      padding: 10px 22px;
+      border-radius: 99px;
+      background: #fff;
+      transition: border-color .2s, color .2s;
+    }
+    .link:hover { border-color: #1a56db; color: #1a56db; }
+
+    .link svg { opacity: .5; transition: opacity .2s; }
+    .link:hover svg { opacity: 1; }
+
+    /* Countdown */
+    .hint {
+      font-size: .65rem;
+      color: #aab4cc;
+      letter-spacing: .1em;
+    }
+    #cdown { color: #1a56db; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    
+    <div class="avatar"><img src="ma_photo.webp" alt="ESSE Henry-Joël"></div>
+
+    <h1>ESSE Henry-Joël</h1>
+    <span class="title">Développeur Web &amp; Mobile · UI/UX</span>
+
+    <div class="line"></div>
+
+    <a class="link" href="https://esse-portfolio.vercel.app">
+      Voir mon portfolio
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M2.5 7h9M11.5 7L8.5 4M11.5 7L8.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <span class="hint">Redirection dans <span id="cdown">6</span>s</span>
+
+  </div>
+
+  <script>
+    let t = 6;
+    const el = document.getElementById('cdown');
+    const iv = setInterval(() => {
+      t--;
+      el.textContent = t;
+      if (t <= 0) {
+        clearInterval(iv);
+        window.location.href = 'https://esse-portfolio.vercel.app';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
